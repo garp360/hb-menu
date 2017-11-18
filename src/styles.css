@@ -1,1 +1,73 @@
-/* You can add global styles to this file, and also import other style files */
+@import '~https://fonts.googleapis.com/icon?family=Material+Icons';
+@import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
+
+.hb-View {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.hb-View>.hb-SideBar {
+  -webkit-box-flex: 1;
+  -ms-flex: 1 1 auto;
+  flex: 1 1 auto;
+}
+
+.hb-View>:last-child {
+  overflow-y: auto;
+}
+
+.hb-NavBar {
+  position: relative;
+  z-index: 10;
+  border-bottom: 1px solid #333;
+}
+
+.hb-AppBar.mat-toolbar {
+  min-height: 40px;
+  background-color: #222;
+  color: #fefefe;
+  box-shadow: 0px 2px 5px #111111;
+}
+
+.hb-AppBar.mat-toolbar-row,
+.hb-AppBar.mat-toolbar-single-row {
+  height: 44px;
+}
+
+.mat-button.hb-IconButton {
+  min-width: auto;
+  padding: 2px;
+}
+
+.hb-ConopsBarItem {
+  font-size: .7em;
+  margin-right: 20px;
+}
+
+.hb-ConopsBarItem.hb-Brand {
+  font-size: 1em;
+  margin-right: 8px;
+}
+
+.hb-ConopsBarItem.hb-Version {
+  font-size: .6em;
+}
+
+.example-fill-remaining-space {
+  flex: 1 1 auto;
+}
+
+.hb-menu-item.mat-menu-item {
+  line-height: 34px;
+  height: 34px;
+}
