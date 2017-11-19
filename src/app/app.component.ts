@@ -11,25 +11,29 @@ import { MenuItem } from './menu-item';
 export class AppComponent {
   version: 'V2.0.0';
   title = 'app';
-
-  menuItems: MenuItem[] = [
+  menuItems: MenuItem[] =
+  [
     {
       text: 'home',
-      children: [
+      children:
+      [
         {
           text: 'Engineering',
-          children: [
+          children:
+          [
             {
               text: 'ENG-16'
             },
             {
-              text: 'Route Builder'
+              text: 'Route Builder',
+              url: 'https://www.google.com'
             }
           ]
         },
         {
           text: 'Inventory',
-          children: [
+          children:
+          [
             {
               text: 'INV-16'
             },
@@ -38,6 +42,7 @@ export class AppComponent {
             }
           ]
         }
+      ]
     }
   ];
 }

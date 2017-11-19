@@ -12,6 +12,10 @@ export class MenuComponent implements OnInit {
 
   constructor() { }
 
+  open(url: string) {
+    window.open(url, '_blank');
+  }
+
   ngOnInit() {
   }
 
