@@ -41,6 +41,42 @@ export class AppComponent {
               text: 'PSA'
             }
           ]
+        },
+        {
+          text: 'Administration',
+          children:
+          [
+            {
+              text: 'CONOPS',
+              children:
+              [
+                {
+                  text: 'Groups'
+                },
+                {
+                  text: 'Users',
+                  url: 'http://www.msn.com',
+                  children:
+                  [
+                    {
+                      text: 'Unlock',
+                      url: 'http://www.yahoo.com',
+                    },
+                    {
+                      text: 'Add',
+                      url: 'http://www.aol.com',
+                    }
+                  ]
+                },
+                {
+                  text: 'Permissions'
+                }
+              ]
+            },
+            {
+              text: 'MRO'
+            }
+          ]
         }
       ]
     }
