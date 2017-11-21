@@ -1,13 +1,11 @@
 <mat-menu #subMenu="matMenu" [overlapTrigger]="false">
   <span *ngFor="let child of items">
-    <!-- Handle branch node menu items -->
     <span *ngIf="child.children && child.children.length > 0">
-      <button class="hb-menu-item" mat-menu-item color="primary" [matMenuTriggerFor]="menu.subMenu">
+      <button class="hb-menu-item" mat-menu-item color="primary" (click)="child.url ? open(child.url) : false" [matMenuTriggerFor]="menu.subMenu">
         <span>{{child.text}}</span>
       </button>
       <conops-menu #menu [items]="child.children"></conops-menu>
     </span>
-    <!-- Handle leaf node menu items -->
     <span *ngIf="!child.children || child.children.length === 0">
       <button class="hb-menu-item" mat-menu-item (click)=open(child.url)>
         <span>{{child.text}}</span>

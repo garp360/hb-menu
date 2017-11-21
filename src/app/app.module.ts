@@ -3,9 +3,13 @@ import { NgModule } from '@angular/core';
 import { MatButtonModule, MatCheckboxModule, MatMenuModule, MatToolbarModule, MatIconModule } from '@angular/material';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
+import { AngularFireModule } from 'angularfire2';
+import { AngularFireDatabaseModule } from 'angularfire2/database';
+import { environment } from '../environments/environment';
 
 import { AppComponent } from './app.component';
 import { MenuComponent } from './menu/menu.component';
+import { MenuService } from './menu/menu.service';
 
 @NgModule({
   declarations: [
@@ -19,7 +23,9 @@ import { MenuComponent } from './menu/menu.component';
 		MatMenuModule,
 		MatToolbarModule,
     MatIconModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFireDatabaseModule
   ],
   exports: [
     MatButtonModule,
@@ -29,7 +35,7 @@ import { MenuComponent } from './menu/menu.component';
     MatIconModule,
     BrowserAnimationsModule
   ],
-  providers: [],
+  providers: [ MenuService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

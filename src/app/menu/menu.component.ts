@@ -1,12 +1,11 @@
-import { Component, Input, OnInit, ViewChild } from '@angular/core';
+import { Component, Input, ViewChild } from '@angular/core';
 import {MenuItem} from '../menu-item';
 
 @Component({
   selector: 'conops-menu',
-  templateUrl: './menu.component.html',
-  styleUrls: ['./menu.component.css']
+  templateUrl: './menu.component.html'
 })
-export class MenuComponent implements OnInit {
+export class MenuComponent {
   @Input() items: MenuItem[];
   @ViewChild('subMenu') public subMenu;
 
@@ -14,9 +13,6 @@ export class MenuComponent implements OnInit {
 
   open(url: string) {
     window.open(url, '_blank');
-  }
-
-  ngOnInit() {
   }
 
 }
