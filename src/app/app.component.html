@@ -1,32 +1,22 @@
 <div class="hb-View">
-<mat-toolbar class="hb-AppBar">
-  <span class="hb-ConopsBarItem">
-    <span *ngFor="let item of menuItems">
-      <!-- Handle branch node buttons here -->
-      <span *ngIf="item.children && item.children.length > 0">
-        <button class="hb-IconButton" mat-button [matMenuTriggerFor]="menu.subMenu"
-        [disabled]="item.disabled">
-          <i class="fa fa-bars"></i>
-        </button>
-        <conops-menu #menu [items]="item.children"></conops-menu>
-      </span>
-      <!-- Leaf node buttons here -->
-      <span *ngIf="!item.children || item.children.length === 0">
-        <button mat-button color="primary">
-          {{item.text}}---W
-        </button>
+  <mat-toolbar class="hb-AppBar">
+    <span class="hb-ConopsBarItem">
+      <span *ngFor="let item of menuItems">
+        <span *ngIf="item.children && item.children.length > 0">
+          <button class="hb-IconButton" mat-button [matMenuTriggerFor]="menu.subMenu" [disabled]="item.disabled">
+            <i class="fa fa-bars"></i>
+          </button>
+          <conops-menu #menu [items]="item.children"></conops-menu>
+        </span>
       </span>
     </span>
-  </span>
-  <span class="hb-ConopsBarItem hb-Brand">CONOPS</span>
-  <span class="hb-ConopsBarItem hb-Version">V1.0.0</span>
-
-  <span class="example-fill-remaining-space"></span>
-  <span class="hb-ConopsBarItem"></span>
-  <span class="example-fill-remaining-space"></span>
-
-  <span class="hb-ConopsBarItem"><span style="color: #4395e8;"><i class="fa fa-user"></i> - Jonathon Habadashery</span></span>
-  <span class="hb-ConopsBarItem">FRC-SW</span>
-  <span class="hb-ConopsBarItem">Help</span>
-</mat-toolbar>
+    <span class="hb-ConopsBarItem hb-Brand">CONOPS</span>
+    <span class="hb-ConopsBarItem hb-Version">V1.0.0</span>
+    <span class="example-fill-remaining-space"></span>
+    <span class="hb-ConopsBarItem"></span>
+    <span class="example-fill-remaining-space"></span>
+    <span class="hb-ConopsBarItem"><span style="color: #4395e8;"><i class="fa fa-user"></i> - Jonathon Habadashery</span></span>
+    <span class="hb-ConopsBarItem">FRC-SW</span>
+    <span class="hb-ConopsBarItem">Help</span>
+  </mat-toolbar>
 </div>
