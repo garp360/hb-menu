@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { MenuItem } from './menu-item';
 import { Observable } from 'rxjs/Observable';
 import { MenuService } from './menu/menu.service';
+import { RestMenuService } from './menu/rest-menu.service';
 
 @Component({
   selector: 'conops-app',
@@ -13,12 +14,13 @@ export class AppComponent implements OnInit {
   title = 'app';
   menuItems: MenuItem[];
 
-  constructor( private menuService:MenuService ) { }
+  constructor( private menuService:RestMenuService ) { }
 
   ngOnInit() {
-    this.menuService.load().subscribe(res => {
-      console.log(res);
-      this.menuItems = res;
-    });
+    this.menuService.getMenu().subscribe(p=>this.menuItems = p);
+    // this.menuService.load().subscribe(res => {
+    //   console.log(res);
+    //   this.menuItems = res;
+    // });
   }
 }

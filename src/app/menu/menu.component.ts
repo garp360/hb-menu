@@ -1,5 +1,5 @@
 import { Component, Input, ViewChild } from '@angular/core';
-import {MenuItem} from '../menu-item';
+import { MenuItem } from '../menu-item';
 
 @Component({
   selector: 'conops-menu',

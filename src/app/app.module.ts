@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { MatButtonModule, MatCheckboxModule, MatMenuModule, MatToolbarModule, MatIconModule } from '@angular/material';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { HttpModule } from '@angular/http';
 
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
@@ -10,6 +11,7 @@ import { environment } from '../environments/environment';
 import { AppComponent } from './app.component';
 import { MenuComponent } from './menu/menu.component';
 import { MenuService } from './menu/menu.service';
+import { RestMenuService } from './menu/rest-menu.service';
 
 @NgModule({
   declarations: [
@@ -18,6 +20,7 @@ import { MenuService } from './menu/menu.service';
   ],
   imports: [
     BrowserModule,
+    HttpModule,
     MatButtonModule,
 		MatCheckboxModule,
 		MatMenuModule,
@@ -35,7 +38,7 @@ import { MenuService } from './menu/menu.service';
     MatIconModule,
     BrowserAnimationsModule
   ],
-  providers: [ MenuService],
+  providers: [ MenuService, RestMenuService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
